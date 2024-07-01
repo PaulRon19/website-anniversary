@@ -7,13 +7,13 @@
         <link rel="stylesheet" type="text/css" href="vd.css">
     </head>
     <body>
-        <audio controls autoplay loop src="audio.mp3"></audio>
+        <audio id="audio" controls autoplay loop src="audio.mp3"></audio>
         <div class="banner">
             <video autoplay muted loop>
                 <source src="vd.mp4" type="video/mp4">
             </video>
             <h2>Happy 5<sup>th</sup> Year and 3<sup>rd</sup> Month Anniversary</h2>
-            <div class="heart"></div>
+            <div id="playButton" class="heart"></div>
         </div>
         <div class="banner-text2">
             <div class="box b1">Happy Anniversary Lay Pr Naw</div>
@@ -22,5 +22,19 @@
             <div class="box b4">You are my joy, my happiness and my deepest love</div>
             <div class="box b5">Be always with me for our entire lives, ChitLay! </div>
         </div>
+                <script>
+            const playButton = document.getElementById('playButton');
+            const audio = document.getElementById('audio');
+    
+            playButton.addEventListener('click', () => {
+                audio.muted = false;
+                audio.play();
+            });
+    
+            document.addEventListener('DOMContentLoaded', (event) => {
+                audio.play();
+            });
+        </script>
+
     </body>
 </html>
